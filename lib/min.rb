@@ -9,5 +9,10 @@ require 'pry'
 # }
 
 def get_the_min(groceries)
-  #code your solution here!
+  grocery_items = []
+  groceries.values.each do |food_arr|
+    grocery_items.concat(food_arr)
+  end #each
+  grocery_items.sort_by!{|item| item[0]}
+  grocery_items[0]
 end
